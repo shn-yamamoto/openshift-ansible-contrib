@@ -1,7 +1,6 @@
 #!/bin/bash
 
 export MYARGS=$@
-echo $MYARGS > ~/myargs.txt
 
 IFS=' ' read -r -a array <<< "$MYARGS"
 export RESOURCEGROUP=$1
