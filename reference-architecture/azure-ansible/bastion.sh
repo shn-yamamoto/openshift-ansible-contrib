@@ -16,7 +16,6 @@ export RHNPOOLID=${10}
 export SSHPRIVATEDATA=${11}
 export SSHPUBLICDATA=${12}
 export SSHPUBLICDATA2=${13}
-export SSHPUBLICDATA3=${14}
 export REGISTRYSTORAGENAME=${array[14]}
 export REGISTRYKEY=${array[15]}
 export LOCATION=${array[16]}
@@ -74,7 +73,7 @@ chmod -R 600 /home/$AUSERNAME/.azuresettings/*
 chown -R $AUSERNAME /home/$AUSERNAME/.azuresettings
 
 mkdir -p /home/$AUSERNAME/.ssh
-echo $SSHPUBLICDATA $SSHPUBLICDATA2 $SSHPUBLICDATA3 >  /home/$AUSERNAME/.ssh/id_rsa.pub
+echo $SSHPUBLICDATA $SSHPUBLICDATA2 > /home/$AUSERNAME/.ssh/id_rsa.pub
 echo $SSHPRIVATEDATA | base64 --d > /home/$AUSERNAME/.ssh/id_rsa
 chown $AUSERNAME /home/$AUSERNAME/.ssh/id_rsa.pub
 chmod 600 /home/$AUSERNAME/.ssh/id_rsa.pub
@@ -96,7 +95,7 @@ chown -R root /root/.azuresettings
 
 mkdir -p /root/.ssh
 echo $SSHPRIVATEDATA | base64 --d > /root/.ssh/id_rsa
-echo $SSHPUBLICDATA $SSHPUBLICDATA2 $SSHPUBLICDATA3   >  /root/.ssh/id_rsa.pub
+echo $SSHPUBLICDATA $SSHPUBLICDATA2 > /root/.ssh/id_rsa.pub
 cp /home/$AUSERNAME/.ssh/authorized_keys /root/.ssh/authorized_keys
 chown root /root/.ssh/id_rsa.pub
 chmod 600 /root/.ssh/id_rsa.pub
@@ -104,7 +103,6 @@ chown root /root/.ssh/id_rsa
 chmod 600 /root/.ssh/id_rsa
 chown root /root/.ssh/authorized_keys
 chmod 600 /root/.ssh/authorized_keys
-
 
 sleep 30
 cat <<EOF > /root/setup_ssmtp.sh
