@@ -52,7 +52,7 @@ For RHEL/Fedora/CentOS:
 | nodeVMSize| String | The size of the each Node Virtual Machine |
 | RHSM Auth Method| Select | usernamepassword or activationKey |
 | rhnUserName| String | Account of Red Hat Network |
-| rhnPassword| String | Password of Red Hat Network as a base64 string |
+| rhnPassword| String | Password of Red Hat Network |
 | poolId| String | Subscription Pool ID |
 | sshPrivateData| String | Private SSH Key as a base64 string |
 | aadClientId| String | appID of "az ad sp create-for-rbac" |
