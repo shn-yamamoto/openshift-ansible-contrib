@@ -151,7 +151,7 @@ yum-config-manager --disable epel-testing
 sleep 30
 if [[ $RHSMMODE == "usernamepassword" ]]
 then
-   subscription-manager register --username="${RHNUSERNAME}" --password="`echo ${RHNPASSWORD} | base64 --d`"
+   subscription-manager register --username="${RHNUSERNAME}" --password="${RHNPASSWORD}"
 else
    subscription-manager register --org="${RHNUSERNAME}" --activationkey="${RHNPASSWORD}"
 fi
