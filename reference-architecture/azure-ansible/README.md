@@ -39,15 +39,24 @@ For RHEL/Fedora/CentOS:
 ### Input Parameters
 
 | Name| Type           | Description |
-| ------------- | ------------- | ------------- |
+| -------------  | ------------ | ------------- |
+| resourceGroup  | String       | Name of Resource Group on Azure |
+| Location       | Select       | Name of Azure Location e.g. japaneast |
 | adminUsername  | String       | Username for SSH Login and OpenShift Webconsole |
-|  adminPassword | SecureString | Password for the OpenShift Webconsole |
+| adminPassword  | SecureString | Password for the OpenShift Webconsole |
 | sshKeyData     | String       | Public SSH Key for the Virtual Machines |
-| masterDnsName  | String       | DNS Prefix for the OpenShift Master / Webconsole |
+| Wildcard Zone  | String       | DNS Prefix for the OpenShift Master / Webconsole |
 | numberOfNodes  | Integer      | Number of OpenShift Nodes to create |
 | masterVMSize | String | The size of the Master Virtual Machine |
 | infranodeVMSize| String | The size of the Infranode Virtual Machine |
 | nodeVMSize| String | The size of the each Node Virtual Machine |
+| RHSM Auth Method| Select | usernamepassword or activationKey |
+| rhnUserName| String | Account of Red Hat Network |
+| rhnPassword| String | Password of Red Hat Network as a base64 string |
+| poolId| String | Subscription Pool ID |
+| sshPrivateData| String | Private SSH Key as a base64 string |
+| aadClientId| String | appID of "az ad sp create-for-rbac" |
+| aadClientSecret| String | password of "az ad sp create-for-rbac" |
 
 ### Output Parameters
 
