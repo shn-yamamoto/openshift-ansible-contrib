@@ -246,7 +246,7 @@
     "RHNPassword" : {
       "type" : "securestring",
       "metadata" : {
-        "description" : "Red Hat Subscription Password or Activation Key"
+        "description" : "Red Hat Subscription Password as a base64 string or Activation Key"
       }
     },
     "SubscriptionPoolId" : {
